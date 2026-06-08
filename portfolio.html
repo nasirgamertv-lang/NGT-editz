@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Editing Portfolio | NGT Editz</title>
+  <link rel="icon" type="image/jpeg" href="Nasir Gamer logo.jpg">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg-graphics">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+  </div>
+
+  <nav>
+    <a href="index.html" class="logo">
+      <img src="Nasir Gamer logo.jpg" alt="NASIR GAMER Tv Logo" class="nav-logo">
+      NGT <span>Editz</span>
+    </a>
+    
+    <div class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="portfolio-section" style="padding-top: 150px; min-height: 100vh;">
+    <div class="about-intro reveal">
+      <h1>My <span class="accent-text">Video Editing</span> Work</h1>
+      <p>A collection of my best video edits, showcasing smooth transitions, visual effects, and dynamic storytelling.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item reveal">
+        <video src="car.mp4" controls preload="metadata" style="aspect-ratio: 9 / 16; width: 100%; height: auto; object-fit: cover;"></video>
+        <div class="portfolio-info">
+          <h3>Car Cinematic</h3>
+          <p>High-energy car montage with seamless transitions and advanced color grading.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal" style="transition-delay: 0.1s;">
+        <video src="clint 2.mp4" controls preload="metadata" style="aspect-ratio: 9 / 16; width: 100%; height: auto; object-fit: cover;"></video>
+        <div class="portfolio-info">
+          <h3>Client Project 2</h3>
+          <p>Professional video edit delivering on client expectations with premium visuals.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal" style="transition-delay: 0.2s;">
+        <video src="Comp 3.mp4" controls preload="metadata" style="aspect-ratio: 9 / 16; width: 100%; height: auto; object-fit: cover;"></video>
+        <div class="portfolio-info">
+          <h3>After Effects Comp</h3>
+          <p>Creative composite using Adobe After Effects for dynamic visual storytelling.</p>
+        </div>
+      </div>
+
+      <!-- Forces next item to a new line -->
+      <div style="flex-basis: 100%; height: 0;"></div>
+
+      <div class="portfolio-item reveal" style="transition-delay: 0.3s;">
+        <video src="azhar_1.mp4" controls preload="metadata" style="aspect-ratio: 9 / 16; width: 100%; height: auto; object-fit: cover;"></video>
+        <div class="portfolio-info">
+          <h3>Azhar Edit</h3>
+          <p>Professional custom video edit with engaging visuals and smooth pacing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

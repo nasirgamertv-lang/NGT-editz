@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Portfolio</title>
+    <link rel="icon" type="image/jpeg" href="Nasir Gamer logo.jpg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- Sidebar Container -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Admin<span class="accent">Panel</span></h2>
+            <button id="close-sidebar" class="mobile-toggle"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item active" data-target="dashboard-section"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#" class="nav-item" data-target="projects-section"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#" class="nav-item" data-target="skills-section"><i class="fas fa-tools"></i> Skills</a></li>
+            <li><a href="#" class="nav-item" data-target="messages-section"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li><a href="#" class="nav-item" data-target="settings-section"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="index.html" target="_blank"><i class="fas fa-external-link-alt"></i> View Site</a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="topbar">
+            <button id="open-sidebar" class="mobile-toggle"><i class="fas fa-bars"></i></button>
+            <div class="topbar-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="topbar-actions">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </div>
+                <div class="profile-info">
+                    <img src="PR.jpg" alt="Profile" id="topbar-profile-img">
+                    <span id="topbar-username">NGT Editz</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sections Container -->
+        <div class="content-container">
+            
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="content-section active">
+                <h2 class="section-title">Dashboard Overview</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div class="card-info">
+                            <h3 id="stat-projects">0</h3>
+                            <p>Total Projects</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-tools"></i></div>
+                        <div class="card-info">
+                            <h3 id="stat-skills">0</h3>
+                            <p>Skills Count</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="card-info">
+                            <h3 id="stat-messages">0</h3>
+                            <p>Contact Messages</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects-section" class="content-section">
+                <h2 class="section-title">Manage Projects</h2>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Add New Project</h3>
+                    </div>
+                    <form id="project-form" class="admin-form">
+                        <input type="hidden" id="project-id">
+                        <div class="form-group">
+                            <label for="project-title">Project Title</label>
+                            <input type="text" id="project-title" required placeholder="e.g. Modern Portfolio">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-link">Project Link</label>
+                            <input type="url" id="project-link" required placeholder="https://example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-image">Project Image URL</label>
+                            <input type="text" id="project-image" required placeholder="images/project1.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-desc">Description</label>
+                            <textarea id="project-desc" rows="3" required placeholder="Brief description..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="project-submit-btn">Add Project</button>
+                        <button type="button" class="btn btn-secondary hidden" id="project-cancel-btn">Cancel Edit</button>
+                    </form>
+                </div>
+                
+                <div class="panel mt-4">
+                    <div class="panel-header">
+                        <h3>Existing Projects</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Link</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projects-table-body">
+                                <!-- Populated via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills-section" class="content-section">
+                <h2 class="section-title">Manage Skills</h2>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>Add New Skill</h3>
+                    </div>
+                    <form id="skill-form" class="admin-form form-inline">
+                        <div class="form-group">
+                            <input type="text" id="skill-name" required placeholder="e.g. JavaScript">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Skill</button>
+                    </form>
+                    
+                    <div class="skills-container mt-4" id="skills-container">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Messages Section -->
+            <section id="messages-section" class="content-section">
+                <h2 class="section-title">Contact Messages</h2>
+                <div class="panel">
+                    <div class="messages-list" id="messages-list">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="content-section">
+                <h2 class="section-title">Dashboard Settings</h2>
+                <div class="panel">
+                    <form id="settings-form" class="admin-form">
+                        <div class="form-group">
+                            <label for="settings-username">Display Name</label>
+                            <input type="text" id="settings-username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="settings-profile-img">Profile Image URL</label>
+                            <input type="text" id="settings-profile-img" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Settings</button>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
